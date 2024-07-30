@@ -1,14 +1,13 @@
-
 %%
 clear
 clc
 close all
 addpath(genpath(pwd));
-number = 5; % 选定优化函数，自行替换: F1，F3~F30，F2函数已被删除
-% variables_no = 30; % 可选 2, 10, 30, 50, 100
-[lower_bound, upper_bound, variables_no, fobj] = Get_Functions_cec2005(number);   % [lb,ub,D,y]：下界、上界、维度、目标函数表达式
-pop_size = 30;                      % population members 
-max_iter = 1000;                  % maximum number of iteration
+number = 5; % Select the optimization function, replace as needed: F1, F3~F30, F2 has been removed
+% variables_no = 30; % Options: 2, 10, 30, 50, 100
+[lower_bound, upper_bound, variables_no, fobj] = Get_Functions_cec2005(number); % [lb, ub, D, y]: lower bound, upper bound, dimensions, objective function
+pop_size = 30; % Population members
+max_iter = 1000; % Maximum number of iterations
 
 %% GCRA
 try
@@ -43,9 +42,9 @@ end
 %% Figure
 figure
 CNT = 40;
-k = round(linspace(1, max_iter, CNT)); % 随机选CNT个点
-% 注意：如果收敛曲线画出来的点很少，随机点很稀疏，说明点取少了，这时应增加取点的数量，100、200、300等，逐渐增加
-% 相反，如果收敛曲线上的随机点非常密集，说明点取多了，此时要减少取点数量
+k = round(linspace(1, max_iter, CNT)); % Randomly select CNT points
+% Note: If the convergence curve shows very few points, and the random points are sparse, it indicates that too few points are selected. In this case, increase the number of selected points to 100, 200, 300, etc.
+% Conversely, if the random points on the convergence curve are very dense, it indicates that too many points are selected. In this case, reduce the number of selected points.
 iter = 1:1:max_iter;
 
 if ~isempty(GCRA_curve)
@@ -63,9 +62,9 @@ else
 end
 
 grid on;
-title('convergence curve')
-xlabel('iterations count');
-ylabel('fitness');
+title('Convergence Curve')
+xlabel('Iterations Count');
+ylabel('Fitness');
 box on
 legend('GCRA', 'LGGCRA')
 set(gcf, 'position', [300 300 800 330])

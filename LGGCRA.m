@@ -38,13 +38,13 @@ function [Score, Position, Convergence] = LGGCRA(Search_Agents, Max_iterations, 
     end
 
     while l <= Max_iterations
-        Alpha_pos = Alpha_pos1; % 确保 Alpha_pos 大小一致
+        Alpha_pos = Alpha_pos1; % Ensure Alpha_pos has the same size
         GR_m = randperm(Search_Agents - 1, 1); 
         GR_rho = 0.5;
         GR_r = Alpha_score - l * (Alpha_score / Max_iterations);
 
-        % 使用 computeIntrinsicMean 计算 GR_mu
-        Phi = @(x) x; % 使用实际的映射函数替换此处
+        % Use computeIntrinsicMean to calculate GR_mu
+        Phi = @(x) x; % Replace this with the actual mapping function
         points = Gcanerats';
         GR_mu = computeIntrinsicMean(points, Phi);
 
