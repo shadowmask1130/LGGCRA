@@ -40,7 +40,7 @@ print("Best Fitness:", best_fitness)
 
 
 ## Benchmarks
-The performance of LGGCRA has been evaluated on the CEC2005 test set and various classical benchmark problems. The results show that LGGCRA achieves superior optimization performance compared to GCRA and other state-of-the-art algorithms.
+The performance of LGGCRA has been evaluated on the CEC2020 test set and various classical benchmark problems. The results show that LGGCRA achieves superior optimization performance compared to GCRA and other state-of-the-art algorithms.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
